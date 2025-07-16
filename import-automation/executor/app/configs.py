@@ -117,18 +117,26 @@ class ExecutorConfig:
     local_repo_dir: str = '/data'
     # Location of the import tool jar.
     import_tool_path: str = '/import-tool.jar'
+    # Location of the differ tool jar.
+    differ_tool_path: str = '/differ-tool.jar'
     # Maximum time a user script can run for in seconds.
     user_script_timeout: float = 3600
     # Arguments for the user script
     user_script_args: List[str] = ()
     # Environment variables for the user script
     user_script_env: dict = None
+    # Invoke import tool genmcf.
+    invoke_import_tool: bool = True
+    # Invoke differ tool.
+    invoke_differ_tool: bool = True
     # Invoke validations before upload.
-    invoke_import_validation: bool = False
+    invoke_import_validation: bool = True
     # Ignore validation status during import.
     ignore_validation_status: bool = True
     # Import validation config file path (relative to data repo).
     validation_config_file: str = 'tools/import_validation/validation_config.json'
+    # Latest import version (overwrite)
+    import_version_override: str = ''
     # Maximum time venv creation can take in seconds.
     venv_create_timeout: float = 3600
     # Maximum time downloading a file can take in seconds.
